@@ -20,7 +20,7 @@ const worker = new Worker(
 
         const embeddings = new GoogleGenerativeAIEmbeddings({
           model: "text-embedding-004",
-          apiKey: "AIzaSyCBA34mC-d9i-1IH0Frv30SdbWlc70WMeU",
+          apiKey: process.env.GEMINI_API_KEY,
         });
         const vectorStore = await QdrantVectorStore.fromExistingCollection(
           embeddings,
